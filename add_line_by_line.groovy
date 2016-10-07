@@ -28,6 +28,8 @@ inputFile.eachLine {
 		lineNum++
 		println "line ${lineNum}"
 		print "\t"
+		//必须使用trim()，将开头的空白符去掉。否则，如果存在空白符，则split返回的数组第一个元素将是“”
+		//refer：http://docs.oracle.com/javase/8/docs/api/index.html
 		def params=line.trim().split("\\s+")
 		if(params.length<2){
 			println "Error: params count < 2, '${params}'"

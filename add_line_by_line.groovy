@@ -28,7 +28,7 @@ inputFile.eachLine {
 		lineNum++
 		println "line ${lineNum}"
 		print "\t"
-		def params=line.split(",")
+		def params=line.trim().split("\\s+")
 		if(params.length<2){
 			println "Error: params count < 2, '${params}'"
 			return
